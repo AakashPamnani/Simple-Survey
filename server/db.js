@@ -5,8 +5,9 @@ const db = new Database("survey.db");
 db.prepare(`
   CREATE TABLE IF NOT EXISTS responses (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    score INTEGER,
-    classification TEXT,
+    name TEXT NOT NULL,
+    score INTEGER NOT NULL,
+    classification TEXT NOT NULL,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
   )
 `).run();
